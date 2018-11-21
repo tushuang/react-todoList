@@ -1,0 +1,21 @@
+.msg-enter,.msg-appear {
+    opacity: 0;
+}
+.msg-enter-active,.msg-appear-active {
+    opacity: 1;
+    transition: all 300ms ease-out;
+}
+.msg-enter-done {
+    opacity: 1;
+}
+.msg-exit {
+    opacity: 1;
+}
+.msg-exit-active {
+    opacity: 0;
+    transition: all 300ms ease-out;
+}
+.msg-exit-done {
+    opacity: 0;
+}
+
