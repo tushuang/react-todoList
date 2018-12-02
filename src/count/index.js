@@ -1,27 +1,16 @@
 
-
 import React,{Component} from 'react'
-import store from '../store'
+import HandleState from '../common'
 import action from '../store/count/action'
+import store from '../store'
+
 
 class Counter extends Component {
-    constructor (props){
-        super (props)
-        this.state = {
-            num : store.getState().count.value
-        }
-    }
-    componentWillMount(){
-        store.subscribe(()=>{
-            this.setState({
-                num : store.getState().count.value
-            })
-        })
-    }
     render () {
+        console.log(this.props)
         return (
             <>
-                <p>{this.state.num}</p>
+                <p>{this.props.value}</p>
                 <button onClick = {()=>{
                     store.dispatch(action.addNum(2))
                 }}>+2</button>
@@ -33,4 +22,4 @@ class Counter extends Component {
     }
 }
 
-export default Counter
+export default HandleState(Counter,'count')
